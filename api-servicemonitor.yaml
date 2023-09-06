@@ -4,7 +4,7 @@ metadata:
   name: api-service-monitor
   labels:
     app: prometheus
-    #PLACEHOLDER: add label so prometheus will discover this ServiceMonitor
+    release: prometheus
 spec:
   jobLabel: job
   endpoints:
@@ -13,4 +13,7 @@ spec:
       path: /swagger-stats/metrics
   selector:
     matchLabels:
-      #PLACEHOLDER: add label from api-service
+      app: api
+
+
+
