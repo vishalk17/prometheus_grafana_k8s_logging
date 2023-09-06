@@ -1,0 +1,14 @@
+apiVersion: monitoring.coreos.com/v1
+kind: PrometheusRule
+metadata:
+  labels:
+    #PLACEHOLDER: Add label here
+  name: example-rules
+spec:
+  groups:
+    - name: node-example
+      rules:
+        - record: node_filesystem_free_percent
+          expr: 100* node_filesystem_free_bytes / node_filesystem_size_bytes
+        #PLACEHOLDER: Add alert here
+
