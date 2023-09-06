@@ -10,5 +10,8 @@ spec:
       rules:
         - record: node_filesystem_free_percent
           expr: 100* node_filesystem_free_bytes / node_filesystem_size_bytes
-        #PLACEHOLDER: Add alert here
-
+        - alert: HostOutOfMemory
+          expr: node_memory_MemAvailable_bytes / node_memory_MemTotal_bytes * 100 < 10
+          labels:
+            team: infra
+            severity: warning
