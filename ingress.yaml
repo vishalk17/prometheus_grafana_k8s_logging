@@ -16,3 +16,14 @@ spec:
                 name: prometheus-kube-prometheus-prometheus
                 port:
                   number: 9090
+    - host: api.kk-demo.com   # Add this new host entry
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: api-service   # Replace with your actual API service name
+                port:
+                  number: 3000   # Replace with your actual API service port
+
